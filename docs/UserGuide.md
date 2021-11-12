@@ -276,8 +276,6 @@ You can easily update these details in a  single `edit` command.<br>
    
    ![Step2](images/logic/commands/editcommand/person/step2.png)
    
-   ![Step3](images/logic/commands/editcommand/person/step3.png)
-   
 More Examples:
 *  `edit 1 e/johndoe@example.com r/A101` Edits the email address and room number of the 1st resident to be `johndoe@example.com` and `A101` respectively.
 *  `edit 1 2 3 v/t fd/20-10-2021` Sets the vaccination status of the 1st, 2nd, and 3rd resident as vaccinated, and sets their last FET dates to 20-10-2021.
@@ -328,9 +326,11 @@ Prefix | Field | Details
 `t` | Duration | Represents the time in days to trace back to. <br> It is an integer, 1 <= duration <= 31, and will default to 7 if not specified
 
 1. Using sample data, running `trace r/Alex Yeoh d/1` will trace down residents Charlotte and David since they all were in the Volleyball event.
-   ![depth1](images/logic/commands/tracecommand/depth1.png)
+   ![alex](images/logic/commands/tracecommand/alex.png)
+   ![depth1](images/logic/commands/tracecommand/depth11.png)
 
 2. Using sample data, running the above command but with depth 2, `trace r/Alex Yeoh d/2`,will trace down resident Irfan in addition, since David in turn was in contact with Irfan during Powerlifting event.
+   ![irfan](images/logic/commands/tracecommand/depth1.png)
    ![depth2](images/logic/commands/tracecommand/depth2.png)
 
 <div markdown="span" class="alert alert-danger">
