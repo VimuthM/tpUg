@@ -202,11 +202,10 @@ Lists residents whose ART collection or FET tests are either:
 |-------------|--------|------|
 | Format | `deadline k/KEYWORD d1/DATE1 d2/DATE2` | `deadline k/LATE_KEYWORD d1/DATE1`|
 | Keyword | `f` or `c` | `lf` or `lc` |
-| Input Date | Both `DATE1` and `DATE2` have to be inputted | Only `DATE1` should be inputted |
 | Command Example | `deadline k/f d1/10-10-2021 d2/12-10-2021` | `deadline k/lf d1/11-10-2021` |
-| Usage | List residents whose deadline lie within the range of two given dates, inclusive | List residents whose deadline is due before a given date
-| Usage Example | A resident's fet or collection is due one week after their `last fet date` or `last collection date`. <br> For example, if a resident's last fet date is on a friday, `15-10-2021`, then the resident's fet deadline is on the following friday which is `22-10-2021` | The number of days a resident is considered late is calculated from `a day after` their deadline to the `current date`, both inclusive.<br> For example, if a resident's last fet date is `15-10-2021`, then the fet deadline will be `22-10-2021`, if the current date is `25-10-2021`, then the number of days the resident is late for fet is `3 days`.
-| Note | The given `DATE2` must be a date later than the given `DATE1`<br>`DATE1` is the start date and `DATE2` is the last date inclusive | Anyone whose fet and collection is due before but not on `DATE1` is outputted
+| Usage | List residents whose deadline lie within the range of two given dates, inclusive. | List residents whose deadline is due before a given date.
+| Due Date | A resident's fet or collection is due one week after their `last fet date` or `last collection date`. | The number of days a resident is considered late is calculated from `a day after` their deadline to the `current date`, both inclusive.
+| Due Date Example | For example, if a resident's last fet date is on a friday, `15-10-2021`, then the resident's fet deadline is on the following friday which is `22-10-2021`. | For example, if a resident's last fet date is `15-10-2021`, then the fet deadline will be `22-10-2021`, if the current date is `25-10-2021`, then the number of days the resident is late for fet is `3 days`.
 
 Here's a step-by-step guide for `Normal Keyword`:<br>
 1. Type the `deadline` command with the `normal keyword`, `f` for fet or `c` for collection, `d1`, the start date and
@@ -230,7 +229,7 @@ Here's a step-by-step guide for `Late Keyword`:<br>
 
 Examples:
 * `deadline k/f d1/10-10-2021 d2/12-10-2021` retrieves a list of residents whose `FET` is due between `10 Oct 2021` and `12 Oct 2021`, inclusive
-* `deadline k/f d1/15-10-2021 d2/20-10-2021` retrieves a list of residents whose `Test Kit Collection` is due some day between `15 Oct 2021` and `20 Oct 2021`, inclusive
+* `deadline k/c d1/15-10-2021 d2/20-10-2021` retrieves a list of residents whose `Test Kit Collection` is due some day between `15 Oct 2021` and `20 Oct 2021`, inclusive
 * `deadline k/lf d1/11-10-2021` retrieves a list of residents whose `FET` is due before `11 Oct 2021`
 * `deadline k/lc d1/12-10-2021` retrieves a list of residents whose `Test Kit Collection` is due before `12 Oct 2021`
 
