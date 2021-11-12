@@ -102,12 +102,6 @@ Below are some formats used to convey different kinds of information:
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME f/FACULTY`, `f/FACULTY n/NAME` is also acceptable.
 
-* If a parameter is expected only once in the command but you specified it multiple times, only the last occurrence of the parameter will be taken.<br>
-  e.g. if you specify `v/t v/f` only `v/f` will be taken.
-
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `exit`, `view`) will be ignored.<br>
-  e.g. if the command specifies `help 123`, it will be interpreted as `help`.
-
 * Date parameters can be of formats: `dd-mm-yyyy`, `dd.mm.yyyy` or `dd/mm/yyyy`
 
 * Time parameter is of format: `hhmm`
@@ -238,7 +232,7 @@ Format: `find [PREFIX/KEYWORD]...`
 
 Prefix | Field | Restrictions
 -------- | ------ | ------
-`n` | Name | - It is case-insensitive. e.g `hans` will match `Hans`, `True` will match `true` <br> <br> - The order of the keywords provided for the name does not matter. e.g `Hans Bo` will match `Bo Hans` <br> <br> - Only full words will be matched. e.g `Han` will not match `Hans` <br> <br> - Residents matching at least one keyword for the name will be returned (i.e. `OR` search). e.g `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+`n` | Name | - It is case-insensitive. e.g `hans` will match `Hans`, `True` will match `true` <br> <br> - Only full words will be matched. e.g `Han` will not match `Hans` <br> <br> - Residents matching at least one keyword for the name will be returned (i.e. `OR` search). e.g `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 `r` | Room |  - It is case-insensitive <br> - A block can be used as a search. e.g `r/A` <br> - A level can be used as a search. e.g `r/2` <br> - A block-level can be used as a search. e.g `r/A2` <br> - A full valid room can be used as a search. e.g `r/A210`
 `e`, `p`, `f`, `v` | Email, Phone, <br> Faculty, VaccStatus | Subject to the same validity conditions as in the [Add Command](#adding-a-residents-information--add)   
 
@@ -263,16 +257,7 @@ Edits the details of existing residents in the address book.
 
 Format: `edit INDEX… [n/NAME] [r/ROOM] [p/PHONE] [e/EMAIL] [v/VACCINATION_STATUS] [f/FACULTY] [fd/LAST_FET_DATE] [cd/LAST_COLLECTION_DATE]`
 
-Parameter | Constraints
-|--------|-------
-**NAME** | Unique, only containing alphabetical characters and spaces
-**PHONE** | At least 6 digits long
-**ROOM** | Made up of **block** + **level** + **number** <br>**block** is an alphabetical character from A to E <br>**level** is a digit from 1 to 4 <br>**number** is two digits from 00 to 29 <br>e.g. `A100`
-**EMAIL** |  The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses, (+_.-). The local-part may not start or end with any special characters. <br> This is followed by a '@' and then a domain name. The domain name is made up of domain labels separated by periods. <br> The domain name must: <br> - end with a domain label at least 2 characters long <br> - have each domain label start and end with alphanumeric characters <br> - have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
-**VACCINATION_STATUS** | `T` or `F` (case insensitive)
-**FACULTY** | Single alphabetical word
-**LAST_FET_DATE** <br> **LAST_COLLECTION_DATE** | Should be of `dd-mm-yyyy`, `dd.mm.yyyy` or `dd/mm/yyyy` format
-
+* All parameters are subject to the same validity conditions as in the [Add Command](#adding-a-residents-information--add)
 * Edit the residents at the specified `INDEXES`.
 * Each index refers to the index number shown in the displayed resident list.
 * The indexes **must be positive integers** 1, 2, 3, …​
