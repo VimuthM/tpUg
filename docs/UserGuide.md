@@ -141,11 +141,11 @@ Parameter | Constraints
 </div>
 
 Here's a step by step guide:<br>
-1. Type the `add` command and the rest of the parameters with help from the command suggestion.
+1. Type the `add` command and the rest of the parameters.
    ![Step1](images/logic/commands/addpersoncommand/step1.png)
 
 
-2. After execution, the person list will now show the new person.
+2. After execution, the resident list will now show the new resident.
    ![Step2](images/logic/commands/addpersoncommand/step2.png)
 
 Examples:
@@ -157,9 +157,6 @@ Examples:
 #### Viewing residents information : `view`
 
 Shows a numbered list of all the residents in the address book.
-
-The index of the resident is the corresponding number in the list
-shown when `view` (without the [INDEX] parameter) is called.
 
 Format: `view [INDEX]`
 * For an index i, 1 ≤ i ≤ n, where n is the number of residents in the address book
@@ -174,8 +171,8 @@ Examples:
 #### Listing residents by fet/collection deadlines : `deadline`
 
 Lists residents whose ART collection or FET tests are either:
-* due before a given date, `d1`, by using the `late keywords` or 
-* due within the range of two given dates, `d1` and `d2`, by using the `normal keywords`.
+* Due within the range of two given dates, `d1` and `d2`, by using the `normal keywords`, `f` or `c` or
+* Due before a given date, `d1`, by using the `late keywords`, `lf` or `lc`
 
 <div markdown="block" class="alert alert-info">
 
@@ -194,23 +191,23 @@ Lists residents whose ART collection or FET tests are either:
 | Due Date | A resident's fet or collection is due one week after their `last fet date` or `last collection date`. | The number of days a resident is considered late is calculated from `a day after` their deadline to the `current date`, both inclusive.
 | Due Date Example | For example, if a resident's last fet date is on a friday, `15-10-2021`, then the resident's fet deadline is on the following friday which is `22-10-2021`. | For example, if a resident's last fet date is `15-10-2021`, then the fet deadline will be `22-10-2021`, if the current date is `25-10-2021`, then the number of days the resident is late for fet is `3 days`.
 
-Here's a step-by-step guide for `Normal Keyword`:<br>
-1. Type the `deadline` command with the `normal keyword`, `f` for fet or `c` for collection, `d1`, the start date and
-   `d2`, the end date.
+Here's a step-by-step guide for `normal keywords`:<br>
+1. Type the `deadline` command with the `normal keyword`, `f` for FET submission or `c` for collection, followed by `d1` for the start date and
+   `d2` for the end date.
    ![Step1](images/logic/commands/deadlinecommand/step1a.png)
 
 
-2. The event list will now show the filtered list of residents.
+2. The event list will now show the filtered list of residents whose `FET` is due between `d1` and `d2`.
    ![Step2](images/logic/commands/deadlinecommand/step2a.png)
 
 
-Here's a step-by-step guide for `Late Keyword`:<br>
-1. Type the `deadline` command with the `late keyword`, `lf` for late fet or `lc` for late collection, `d1`, the 
+Here's a step-by-step guide for `late keywords`:<br>
+1. Type the `deadline` command with the `late keyword`, `lf` for late FET submission or `lc` for late collection, followed by `d1` for the 
    end date
    ![Step1](images/logic/commands/deadlinecommand/step1b.png)
 
 
-2. The event list will now show the filtered list of residents.
+2. The event list will now show the filtered list of residents whose `FET` was due before `d1`.
    ![Step2](images/logic/commands/deadlinecommand/step2b.png)
    
 
