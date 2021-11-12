@@ -454,10 +454,10 @@ Format: `export FILE_NAME`
 1. Run `export FILE_NAME`.
    ![Export](images/logic/commands/exportcommand/command.png)
 
-2. Find your csv file in the `data/exports` folder.
-   <img src="images/logic/commands/exportcommand/filefolder.png" width="300">
+2. Find your csv file in the `data/exports` folder. <br>
+   <img src="images/logic/commands/exportcommand/filefolder.png">
 
-3. Your exported csv file should look like this.
+3. Your exported csv file should look like this. <br>
    <img src="images/logic/commands/exportcommand/csvFormat.png" width="300">
 
 Examples:
