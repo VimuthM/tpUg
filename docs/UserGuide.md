@@ -68,46 +68,41 @@ Below are some formats used to convey different kinds of information:
 | `Highlights` | These are used to highlight parameters, field values, commands, file names or any user inputs. |
 
 
-
-## Features
-
 ### Command Format
 
-**Format:** `command_word Prefix/PARAMETER`
+**Format:** `COMMAND_WORD PREFIX/PARAMETER`
 
-* `command_word` is a word at the start of the command to specify the action to be done. <br> e.g. in `add n/NAME`, `add` is the command word.
+| Format              | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| `COMMAND_WORD`      | A word at the start of the command to specify the action to be done. <br> e.g. in `add n/NAME`, `add` is the command word.                             |
+| `PARAMETER`         | The information to be supplied by the user.<br> e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe` <br> |
+| `PREFIX` | One or two alphabets followed by a `/`, to be inputted before every `PARAMETER` to denote the type of information being supplied as parameter. <br>e.g. in `add n/NAME`, `n/` is a prefix to indicate that NAME is being supplied.   |
 
 
-* `PARAMETER` are word(s) in `UPPER_CASE` to be supplied by the user.<br> e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`
-
-
-* `Prefix` are letter(s) before `PARAMETER` to denote the information supplied as parameter. <br>e.g. in `add n/NAME`, `n/` is a prefix to indicate that NAME is being supplied.
-
+| Types of Parameters    | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| `[PARAMETER]`      |  Items in square brackets are optional.<br>e.g `add n/NAME [fd/LAST_FET_DATE]` can be used as `add n/John` or as `add n/John fd/09-09-2021`.                        |
+| `PARAMETER...`     | An ellipsis (...) implies multiple of that parameter can be provided.<br>e.g `edit INDEX...` can be used as `edit 1` or as `edit 1 2 3 5 8`. |
+| `DATE` | Date parameters can be of formats: `dd-mm-yyyy`, `dd.mm.yyyy` or `dd/mm/yyyy`  |
+| `TIME`  | Time parameter is of format: `hhmm` |
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Notes about the command format:**<br>
-
-* Items in square brackets are optional.<br>
-  e.g `add n/NAME [fd/LAST_FET_DATE]` can be used as `add n/John` or as `add n/John fd/09-09-2021`.
-
-* An ellipsis (...) implies multiple of that parameter can be provided.<br>
-  e.g `edit INDEX...` can be used as `edit 1` or as `edit 1 2 3 5 8`.
+**:information_source: Additional Information**<br>
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME f/FACULTY`, `f/FACULTY n/NAME` is also acceptable.
 
-* If a parameter is expected only once in the command but you specified it multiple times, only the last occurrence of the parameter will be taken.<br>
+* If a parameter is expected only once in the command but you specified it multiple times, only the **last occurrence** of the parameter will be taken.<br>
   e.g. if you specify `v/t v/f` only `v/f` will be taken.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `exit`, `view`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
-
-* Date parameters can be of formats: `dd-mm-yyyy`, `dd.mm.yyyy` or `dd/mm/yyyy`
-
-* Time parameter is of format: `hhmm`
-
+  
 </div>
+
+
+## Features
 
 ### For Residents
 
