@@ -71,14 +71,6 @@ Below are some formats used to convey different kinds of information:
 | `Highlights` | These are used to highlight parameters, field values, commands, file names or any user inputs. |
 
 
-<<<<<<< HEAD
-=======
-
-<div style="page-break-after: always;"></div>
-
-## Features
-
->>>>>>> 0b7c47a1de8f07cff0a3b6ade27ee5ec2fe1ed58
 ### Command Format
 
 **Format:** `COMMAND_WORD PREFIX/PARAMETER`
@@ -109,13 +101,12 @@ Below are some formats used to convey different kinds of information:
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `exit`, `view`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
-  
+
 </div>
 
+<div style="page-break-after: always;"></div>
 
 ## Features
-
-<div style="page-break-after: always;"></div>
 
 ### For Residents
 
