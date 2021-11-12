@@ -71,7 +71,7 @@ Below are some formats used to convey different kinds of information:
 | `Highlights` | These are used to highlight parameters, field values, commands, file names or any user inputs. |
 
 
-### Command Format
+## Command Format
 
 **Format:** `COMMAND_WORD PREFIX/PARAMETER`
 
