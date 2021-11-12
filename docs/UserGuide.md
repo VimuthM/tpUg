@@ -63,24 +63,14 @@ Section | Explanation
 
 Below are some formats used to convey different kinds of information:
 
-**Information boxes**
+| Syntax              | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| <div markdown="span" class="alert alert-info"> :information_source: Information Boxes</div> | These contain additional information about SafeFor(H)All.      |
+| <div markdown="span" class="alert alert-primary"> :bulb: Tips</div>  | These contain our tips that can help improve your experience using SafeFor(H)All. |
+| <div markdown="span" class="alert alert-danger"> :warning: Warnings</div> | These contain warnings that can result in unintended consequences of a feature.    |
+| `Highlights` | These are used to highlight parameters, field values, commands, file names or any user inputs. |
 
-<div markdown="span" class="alert alert-info"> :information_source: **Info:** These contain additional information about SafeFor(H)All.
-</div>
 
-**Tips**
-
-<div markdown="span" class="alert alert-primary"> :bulb: **Tip:** These contain our tips that can help improve your experience using SafeFor(H)All.
-</div>
-
-**Warnings**
-
-<div markdown="span" class="alert alert-danger"> :warning: **Warning:** These contain warnings that can result in unintended consequences of a feature.
-</div>
-
-**Highlights**
-
-`These are used to highlight parameters, field values, commands, file names or any user inputs.`
 
 <div style="page-break-after: always;"></div>
 
