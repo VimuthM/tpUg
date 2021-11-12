@@ -13,6 +13,7 @@ SafeFor(H)All is a **desktop app for hall admins to keep track of hall residents
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Quick start
 
@@ -39,6 +40,8 @@ SafeFor(H)All is a **desktop app for hall admins to keep track of hall residents
 1. Refer to the [Features](#features) below for details of each command.
 
 -------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## App Interface
 
 Refer to the diagram below to understand how our app, SafeFor(H)All looks like.
@@ -60,24 +63,16 @@ Section | Explanation
 
 Below are some formats used to convey different kinds of information:
 
-**Information boxes**
+| Syntax              | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| <div markdown="span" class="alert alert-info"> :information_source: Information Boxes</div> | These contain additional information about SafeFor(H)All.      |
+| <div markdown="span" class="alert alert-primary"> :bulb: Tips</div>  | These contain our tips that can help improve your experience using SafeFor(H)All. |
+| <div markdown="span" class="alert alert-danger"> :warning: Warnings</div> | These contain warnings that can result in unintended consequences of a feature.    |
+| `Highlights` | These are used to highlight parameters, field values, commands, file names or any user inputs. |
 
-<div markdown="span" class="alert alert-info"> :information_source: **Info:** These contain additional information about SafeFor(H)All.
-</div>
 
-**Tips**
 
-<div markdown="span" class="alert alert-primary"> :bulb: **Tip:** These contain our tips that can help improve your experience using SafeFor(H)All.
-</div>
-
-**Warnings**
-
-<div markdown="span" class="alert alert-danger"> :warning: **Warning:** These contain warnings that can result in unintended consequences of a feature.
-</div>
-
-**Highlights**
-
-`These are used to highlight parameters, field values, commands, file names or any user inputs.`
+<div style="page-break-after: always;"></div>
 
 ## Features
 
@@ -119,11 +114,11 @@ Below are some formats used to convey different kinds of information:
 
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ### For Residents
 
 These commands will function as specified when run under the `Resident` tab.
-
-<div style="page-break-after: always;"></div>
 
 #### Adding a resident’s information : `add`
 
@@ -458,11 +453,11 @@ Format: `export FILE_NAME`
 1. Run `export FILE_NAME`.
    ![Export](images/logic/commands/exportcommand/command.png)
 
-2. Find your csv file in the `data/exports` folder.
-   ![FileStructure](images/logic/commands/exportcommand/filefolder.png)
+2. Find your csv file in the `data/exports` folder. <br>
+   <img src="images/logic/commands/exportcommand/filefolder.png">
 
-3. Your exported csv file should look like this.
-   ![Csv](images/logic/commands/exportcommand/csvFormat.png)
+3. Your exported csv file should look like this. <br>
+   <img src="images/logic/commands/exportcommand/csvFormat.png" width="300">
 
 Examples:
 * `export` followed by `safeforhall` creates a `safeforhall.csv` within the `data/exports/` folder, with the emails of all the residents currently displayed on the application.
@@ -472,8 +467,6 @@ Examples:
 ### For Events
 
 These commands will function as specified when run under the `Event` tab.
-
-<div style="page-break-after: always;"></div>
 
 #### Adding an event : `add`
 
@@ -716,8 +709,6 @@ Examples:
 
 These commands will function the same in either tab.
 
-<div style="page-break-after: always;"></div>
-
 #### Viewing help : `help`
 
 Provides a short summary of the commands and a hyperlink for the user to reach this online user guide.
@@ -726,15 +717,11 @@ Provides a short summary of the commands and a hyperlink for the user to reach t
 
 Format: `help`
 
-<div style="page-break-after: always;"></div>
-
 #### Switching tabs: `switch`
 
 Toggles between the `Residents` and `Events` tab.
 
 Format: `switch`
-
-<div style="page-break-after: always;"></div>
 
 #### Command history
 
@@ -795,6 +782,7 @@ PREFIX | Description | Usage
 `by/` | Field | `sort`
 `o/` | Order | `sort`
 
+<div style="page-break-after: always;"></div>
 
 ## Command summary
 
