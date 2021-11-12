@@ -71,50 +71,42 @@ Below are some formats used to convey different kinds of information:
 | `Highlights` | These are used to highlight parameters, field values, commands, file names or any user inputs. |
 
 
+## Command Format
 
-<div style="page-break-after: always;"></div>
+**Format:** `COMMAND_WORD PREFIX/PARAMETER`
 
-## Features
-
-### Command Format
-
-**Format:** `command_word Prefix/PARAMETER`
-
-* `command_word` is a word at the start of the command to specify the action to be done. <br> e.g. in `add n/NAME`, `add` is the command word.
-
-
-* `PARAMETER` are word(s) in `UPPER_CASE` to be supplied by the user.<br> e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`
+| Format              | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| `COMMAND_WORD`      | A word at the start of the command to specify the action to be done. <br> e.g. in `add n/NAME`, `add` is the command word.                             |
+| `PARAMETER`         | The information to be supplied by the user.<br> e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe` <br> |
+| `PREFIX` | One or two alphabets followed by a `/`, to be inputted before every `PARAMETER` to denote the type of information being supplied as parameter. <br>e.g. in `add n/NAME`, `n/` is a prefix to indicate that NAME is being supplied.   |
 
 
-* `Prefix` are letter(s) before `PARAMETER` to denote the information supplied as parameter. <br>e.g. in `add n/NAME`, `n/` is a prefix to indicate that NAME is being supplied.
-
+| Types of Parameters    | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| `[PARAMETER]`      |  Items in square brackets are optional.<br>e.g `add n/NAME [fd/LAST_FET_DATE]` can be used as `add n/John` or as `add n/John fd/09-09-2021`.                        |
+| `PARAMETER...`     | An ellipsis (...) implies multiple of that parameter can be provided.<br>e.g `edit INDEX...` can be used as `edit 1` or as `edit 1 2 3 5 8`. |
+| `DATE` | Date parameters can be of formats: `dd-mm-yyyy`, `dd.mm.yyyy` or `dd/mm/yyyy`  |
+| `TIME`  | Time parameter is of format: `hhmm` |
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Notes about the command format:**<br>
-
-* Items in square brackets are optional.<br>
-  e.g `add n/NAME [fd/LAST_FET_DATE]` can be used as `add n/John` or as `add n/John fd/09-09-2021`.
-
-* An ellipsis (...) implies multiple of that parameter can be provided.<br>
-  e.g `edit INDEX...` can be used as `edit 1` or as `edit 1 2 3 5 8`.
+**:information_source: Additional Information**<br>
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME f/FACULTY`, `f/FACULTY n/NAME` is also acceptable.
 
-* If a parameter is expected only once in the command but you specified it multiple times, only the last occurrence of the parameter will be taken.<br>
+* If a parameter is expected only once in the command but you specified it multiple times, only the **last occurrence** of the parameter will be taken.<br>
   e.g. if you specify `v/t v/f` only `v/f` will be taken.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `exit`, `view`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
-* Date parameters can be of formats: `dd-mm-yyyy`, `dd.mm.yyyy` or `dd/mm/yyyy`
-
-* Time parameter is of format: `hhmm`
-
 </div>
 
 <div style="page-break-after: always;"></div>
+
+## Features
 
 ### For Residents
 
@@ -149,11 +141,11 @@ Parameter | Constraints
 </div>
 
 Here's a step by step guide:<br>
-1. Type the `add` command and the rest of the parameters with help from the command suggestion.
+1. Type the `add` command and the rest of the parameters.
    ![Step1](images/logic/commands/addpersoncommand/step1.png)
 
 
-2. After execution, the person list will now show the new person.
+2. After execution, the resident list will now show the new resident.
    ![Step2](images/logic/commands/addpersoncommand/step2.png)
 
 Examples:
@@ -165,9 +157,6 @@ Examples:
 #### Viewing residents information : `view`
 
 Shows a numbered list of all the residents in the address book.
-
-The index of the resident is the corresponding number in the list
-shown when `view` (without the [INDEX] parameter) is called.
 
 Format: `view [INDEX]`
 * For an index i, 1 ≤ i ≤ n, where n is the number of residents in the address book
@@ -182,8 +171,8 @@ Examples:
 #### Listing residents by fet/collection deadlines : `deadline`
 
 Lists residents whose ART collection or FET tests are either:
-* due before a given date, `d1`, by using the `late keywords` or 
-* due within the range of two given dates, `d1` and `d2`, by using the `normal keywords`.
+* Due within the range of two given dates, `d1` and `d2`, by using the `normal keywords`, `f` or `c` or
+* Due before a given date, `d1`, by using the `late keywords`, `lf` or `lc`
 
 <div markdown="block" class="alert alert-info">
 
@@ -202,23 +191,23 @@ Lists residents whose ART collection or FET tests are either:
 | Due Date | A resident's fet or collection is due one week after their `last fet date` or `last collection date`. | The number of days a resident is considered late is calculated from `a day after` their deadline to the `current date`, both inclusive.
 | Due Date Example | For example, if a resident's last fet date is on a friday, `15-10-2021`, then the resident's fet deadline is on the following friday which is `22-10-2021`. | For example, if a resident's last fet date is `15-10-2021`, then the fet deadline will be `22-10-2021`, if the current date is `25-10-2021`, then the number of days the resident is late for fet is `3 days`.
 
-Here's a step-by-step guide for `Normal Keyword`:<br>
-1. Type the `deadline` command with the `normal keyword`, `f` for fet or `c` for collection, `d1`, the start date and
-   `d2`, the end date.
+Here's a step-by-step guide for `normal keywords`:<br>
+1. Type the `deadline` command with the `normal keyword`, `f` for FET submission or `c` for collection, followed by `d1` for the start date and
+   `d2` for the end date.
    ![Step1](images/logic/commands/deadlinecommand/step1a.png)
 
 
-2. The event list will now show the filtered list of residents.
+2. The event list will now show the filtered list of residents whose `FET` is due between `d1` and `d2`.
    ![Step2](images/logic/commands/deadlinecommand/step2a.png)
 
 
-Here's a step-by-step guide for `Late Keyword`:<br>
-1. Type the `deadline` command with the `late keyword`, `lf` for late fet or `lc` for late collection, `d1`, the 
+Here's a step-by-step guide for `late keywords`:<br>
+1. Type the `deadline` command with the `late keyword`, `lf` for late FET submission or `lc` for late collection, followed by `d1` for the 
    end date
    ![Step1](images/logic/commands/deadlinecommand/step1b.png)
 
 
-2. The event list will now show the filtered list of residents.
+2. The event list will now show the filtered list of residents whose `FET` was due before `d1`.
    ![Step2](images/logic/commands/deadlinecommand/step2b.png)
    
 
@@ -238,7 +227,7 @@ Format: `find [PREFIX/KEYWORD]...`
 
 Prefix | Field | Restrictions
 -------- | ------ | ------
-`n` | Name | - It is case-insensitive. e.g `hans` will match `Hans`, `True` will match `true` <br> <br> - The order of the keywords provided for the name does not matter. e.g `Hans Bo` will match `Bo Hans` <br> <br> - Only full words will be matched. e.g `Han` will not match `Hans` <br> <br> - Residents matching at least one keyword for the name will be returned (i.e. `OR` search). e.g `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+`n` | Name | - It is case-insensitive. e.g `hans` will match `Hans`, `True` will match `true` <br> <br> - Only full words will be matched. e.g `Han` will not match `Hans` <br> <br> - Residents matching at least one keyword for the name will be returned (i.e. `OR` search). e.g `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 `r` | Room |  - It is case-insensitive <br> - A block can be used as a search. e.g `r/A` <br> - A level can be used as a search. e.g `r/2` <br> - A block-level can be used as a search. e.g `r/A2` <br> - A full valid room can be used as a search. e.g `r/A210`
 `e`, `p`, `f`, `v` | Email, Phone, <br> Faculty, VaccStatus | Subject to the same validity conditions as in the [Add Command](#adding-a-residents-information--add)   
 
@@ -263,16 +252,7 @@ Edits the details of existing residents in the address book.
 
 Format: `edit INDEX… [n/NAME] [r/ROOM] [p/PHONE] [e/EMAIL] [v/VACCINATION_STATUS] [f/FACULTY] [fd/LAST_FET_DATE] [cd/LAST_COLLECTION_DATE]`
 
-Parameter | Constraints
-|--------|-------
-**NAME** | Unique, only containing alphabetical characters and spaces
-**PHONE** | At least 6 digits long
-**ROOM** | Made up of **block** + **level** + **number** <br>**block** is an alphabetical character from A to E <br>**level** is a digit from 1 to 4 <br>**number** is two digits from 00 to 29 <br>e.g. `A100`
-**EMAIL** |  The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses, (+_.-). The local-part may not start or end with any special characters. <br> This is followed by a '@' and then a domain name. The domain name is made up of domain labels separated by periods. <br> The domain name must: <br> - end with a domain label at least 2 characters long <br> - have each domain label start and end with alphanumeric characters <br> - have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
-**VACCINATION_STATUS** | `T` or `F` (case insensitive)
-**FACULTY** | Single alphabetical word
-**LAST_FET_DATE** <br> **LAST_COLLECTION_DATE** | Should be of `dd-mm-yyyy`, `dd.mm.yyyy` or `dd/mm/yyyy` format
-
+* All parameters are subject to the same validity conditions as in the [Add Command](#adding-a-residents-information--add)
 * Edit the residents at the specified `INDEXES`.
 * Each index refers to the index number shown in the displayed resident list.
 * The indexes **must be positive integers** 1, 2, 3, …​
@@ -283,7 +263,7 @@ Parameter | Constraints
 Example:<br>
 Let’s say that residents Alex Yeoh and Bernice Yu just updated you that they are now fully vaccinated, and have submitted their overdue FET on 5th Nov 2021.
 
-You can easily update these details in a single `edit` command.<br>
+You can easily update these details in a  single `edit` command.<br>
 
 1. Navigate to the list of residents. Note that Alex Yeoh and Bernice Yu have indexes of 1 and 2 respectively in the current resident list. 
    To update Alex and Bernice's vaccination statuses and last FET dates, simply enter `edit 1 2 v/T fd/05-11-2021`.
@@ -295,8 +275,6 @@ You can easily update these details in a single `edit` command.<br>
    There will also be a syringe symbol beside their names to show that they are vaccinated.
    
    ![Step2](images/logic/commands/editcommand/person/step2.png)
-   
-   ![Step3](images/logic/commands/editcommand/person/step3.png)
    
 More Examples:
 *  `edit 1 e/johndoe@example.com r/A101` Edits the email address and room number of the 1st resident to be `johndoe@example.com` and `A101` respectively.
@@ -348,9 +326,11 @@ Prefix | Field | Details
 `t` | Duration | Represents the time in days to trace back to. <br> It is an integer, 1 <= duration <= 31, and will default to 7 if not specified
 
 1. Using sample data, running `trace r/Alex Yeoh d/1` will trace down residents Charlotte and David since they all were in the Volleyball event.
-   ![depth1](images/logic/commands/tracecommand/depth1.png)
+   ![alex](images/logic/commands/tracecommand/alex.png)
+   ![depth1](images/logic/commands/tracecommand/depth11.png)
 
 2. Using sample data, running the above command but with depth 2, `trace r/Alex Yeoh d/2`,will trace down resident Irfan in addition, since David in turn was in contact with Irfan during Powerlifting event.
+   ![irfan](images/logic/commands/tracecommand/depth1.png)
    ![depth2](images/logic/commands/tracecommand/depth2.png)
 
 <div markdown="span" class="alert alert-danger">
