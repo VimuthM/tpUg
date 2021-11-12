@@ -279,8 +279,6 @@ You can easily update these details in a  single `edit` command.<br>
    
    ![Step2](images/logic/commands/editcommand/person/step2.png)
    
-   ![Step3](images/logic/commands/editcommand/person/step3.png)
-   
 More Examples:
 *  `edit 1 e/johndoe@example.com r/A101` Edits the email address and room number of the 1st resident to be `johndoe@example.com` and `A101` respectively.
 *  `edit 1 2 3 v/t fd/20-10-2021` Sets the vaccination status of the 1st, 2nd, and 3rd resident as vaccinated, and sets their last FET dates to 20-10-2021.
