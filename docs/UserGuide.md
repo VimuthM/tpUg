@@ -113,7 +113,7 @@ Below are some formats used to convey different kinds of information:
 
 These commands will function as specified when run under the `Resident` tab.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Adding a resident’s information : `add`
 
@@ -155,7 +155,7 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com r/A100 v/t f/SoC`
 * `add n/Betsy Crowe e/betsyc@example.com v/F r/B400 p/1234567 f/FASS fd/20-10-2021 cd/23-10-2021`
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Viewing residents information : `view`
 
@@ -172,7 +172,7 @@ Examples:
 * `view` shows a list of all the residents
 * `view 30` shows the details of the resident at index 30
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Listing residents by fet/collection deadlines : `deadline`
 
@@ -224,7 +224,7 @@ Examples:
 * `deadline k/lf d1/11-10-2021` retrieves a list of residents whose `FET` is due before `11 Oct 2021`
 * `deadline k/lc d1/12-10-2021` retrieves a list of residents whose `Test Kit Collection` is due before `12 Oct 2021`
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Searching by resident information: `find`
 
@@ -251,7 +251,7 @@ Examples:
 * `find n/alex david v/t` returns vaccinated residents, `Alex Yeoh` and `David Li`
 * `find v/f f/soc` returns un-vaccinated residents from SoC <br>
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Editing a resident : `edit`
 
@@ -298,7 +298,7 @@ More Examples:
 *  `edit 1 e/johndoe@example.com r/A101` Edits the email address and room number of the 1st resident to be `johndoe@example.com` and `A101` respectively.
 *  `edit 1 2 3 v/t fd/20-10-2021` Sets the vaccination status of the 1st, 2nd, and 3rd resident as vaccinated, and sets their last FET dates to 20-10-2021.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Deleting a resident : `delete`
 
@@ -329,7 +329,7 @@ More Examples:
 * `view` followed by `delete 1 2 3` deletes the first 3 residents in the address book.
 * `find n/Anne` followed by `delete 1` deletes the 1st resident named Anne in the results of the `find` command.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Tracing close contacts : `trace`
 
@@ -359,7 +359,7 @@ Examples:
 * `trace` followed by `r/A101` lists the resident's immediate close contact from events in the past 7 days.
 * `trace r/Anne` followed by `d/2 t/4` lists Anne's immediate contacts and their immediate contacts from events in the past 4 days.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Sorting residents : `sort`
 
@@ -386,7 +386,7 @@ FIELD | Resident's field
 Examples:
 * `sort by/n o/a` sorts the residents by name in ascending order
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Importing resident data : `import`
 
@@ -429,7 +429,7 @@ Here's a step by step guide:<br>
 Examples:
 * `import` followed by `safeforhall` attempts to read the file `safeforhall.csv` within the `data/` folder.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Exporting residents' emails : `export`
 
@@ -458,13 +458,13 @@ Format: `export FILE_NAME`
 Examples:
 * `export` followed by `safeforhall` creates a `safeforhall.csv` within the `data/exports/` folder, with the emails of all the residents currently displayed on the application.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 ### For Events
 
 These commands will function as specified when run under the `Event` tab.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Adding an event : `add`
 
@@ -503,7 +503,7 @@ Examples:
 * `add n/Frisbee v/MPSH c/15 d/30/10/2021 t/1500 r/E201, a121`
 * `add n/Frisbee v/MPSH c/15 d/30/10/2021 t/1500 r/John Doe, Jane Doe`
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Viewing events information : `view`
 
@@ -520,7 +520,7 @@ Examples:
 * `view` shows a list of all the events
 * `view 5` shows the details of the event at index 5
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Editing an event : `edit`
 
@@ -556,7 +556,7 @@ You can easily update these details in a single `edit` command.<br>
 More Examples:
 *  `edit 1 n/Football Training v/Field c/50` Edits the name, venue, and capacity of the 1st event in the event list to be `Football Training`, `Field`, and `50` respectively.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Searching by event information: `find`
 
@@ -575,7 +575,7 @@ Examples:
 * `find v/NUS field c/5` returns all the events at `NUS field` which have a capacity of `5`
 * `find d/03-01-2021` returns all the events which occur on the date `03-01-2021` <br>
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Deleting an event : `delete`
 
@@ -606,7 +606,7 @@ More Examples:
 * `view` followed by `delete 1 2 3` deletes the first 3 events in the address book.
 * `find n/Football Training` followed by `delete 1` deletes the 1st event named Football Training in the results of the `find` command.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Add residents to an event: `include`
 
@@ -641,7 +641,7 @@ Examples:
 * `include 3 r/John Doe` adds John Doe to the third event in the address book
 * `include 4 r/John Doe, Jane Doe` adds John Doe and Jane Doe to the fourth event in the address book
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Remove residents from an event: `exclude`
 
@@ -676,7 +676,7 @@ Examples:
 * `exclude 3 r/John Doe` removes John Doe from the third event in the address book
 * `exclude 4 r/John Doe, Jane Doe` removes John Doe and Jane Doe from the fourth event in the address book
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Sorting events : `sort`
 
@@ -701,13 +701,13 @@ Examples:
 * `sort by/d o/a` sorts the events by date and time from old to new
 * `sort by/d o/d` sorts the events by date and time from new to old
 
-<br>
+<div style="page-break-after: always;"></div>
 
 ### Commons
 
 These commands will function the same in either tab.
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Viewing help : `help`
 
@@ -717,7 +717,7 @@ Provides a short summary of the commands and a hyperlink for the user to reach t
 
 Format: `help`
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Switching tabs: `switch`
 
@@ -725,27 +725,21 @@ Toggles between the `Residents` and `Events` tab.
 
 Format: `switch`
 
-<br>
+<div style="page-break-after: always;"></div>
 
 #### Command history
 
 The `up` and `down` arrow keys when used with the input box in focus, allows traversal of past input commands to increase of use and efficiency.
 
-<br>
-
 #### Command suggestion
 
 A suggested string of parameters is displayed above the input box when a valid command is entered, parameters that have their prefixes entered correctly are removed from this suggestion.
-
-<br>
 
 #### Clearing all entries : `clear`
 
 Clears all entries from the address book, including entries from the `Resident` Tab and the `Event` Tab. Data cleared cannot be retrieved and this command should be used with caution. A sample data can be retrieved by removing the `safeforhall.json` file from `/data`
 
 Format: `clear`
-
-<br>
 
 #### Exiting the program : `exit`
 
@@ -754,6 +748,7 @@ Exits the program.
 Format: `exit`
 
 -------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Prefix summary
 
