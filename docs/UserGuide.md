@@ -13,6 +13,7 @@ SafeFor(H)All is a **desktop app for hall admins to keep track of hall residents
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Quick start
 
@@ -39,6 +40,8 @@ SafeFor(H)All is a **desktop app for hall admins to keep track of hall residents
 1. Refer to the [Features](#features) below for details of each command.
 
 -------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## App Interface
 
 Refer to the diagram below to understand how our app, SafeFor(H)All looks like.
@@ -68,6 +71,14 @@ Below are some formats used to convey different kinds of information:
 | `Highlights` | These are used to highlight parameters, field values, commands, file names or any user inputs. |
 
 
+<<<<<<< HEAD
+=======
+
+<div style="page-break-after: always;"></div>
+
+## Features
+
+>>>>>>> 0b7c47a1de8f07cff0a3b6ade27ee5ec2fe1ed58
 ### Command Format
 
 **Format:** `COMMAND_WORD PREFIX/PARAMETER`
@@ -104,11 +115,11 @@ Below are some formats used to convey different kinds of information:
 
 ## Features
 
+<div style="page-break-after: always;"></div>
+
 ### For Residents
 
 These commands will function as specified when run under the `Resident` tab.
-
-<div style="page-break-after: always;"></div>
 
 #### Adding a resident’s information : `add`
 
@@ -187,11 +198,10 @@ Lists residents whose ART collection or FET tests are either:
 |-------------|--------|------|
 | Format | `deadline k/KEYWORD d1/DATE1 d2/DATE2` | `deadline k/LATE_KEYWORD d1/DATE1`|
 | Keyword | `f` or `c` | `lf` or `lc` |
-| Input Date | Both `DATE1` and `DATE2` have to be inputted | Only `DATE1` should be inputted |
 | Command Example | `deadline k/f d1/10-10-2021 d2/12-10-2021` | `deadline k/lf d1/11-10-2021` |
-| Usage | List residents whose deadline lie within the range of two given dates, inclusive | List residents whose deadline is due before a given date
-| Usage Example | A resident's fet or collection is due one week after their `last fet date` or `last collection date`. <br> For example, if a resident's last fet date is on a friday, `15-10-2021`, then the resident's fet deadline is on the following friday which is `22-10-2021` | The number of days a resident is considered late is calculated from `a day after` their deadline to the `current date`, both inclusive.<br> For example, if a resident's last fet date is `15-10-2021`, then the fet deadline will be `22-10-2021`, if the current date is `25-10-2021`, then the number of days the resident is late for fet is `3 days`.
-| Note | The given `DATE2` must be a date later than the given `DATE1`<br>`DATE1` is the start date and `DATE2` is the last date inclusive | Anyone whose fet and collection is due before but not on `DATE1` is outputted
+| Usage | List residents whose deadline lie within the range of two given dates, inclusive. | List residents whose deadline is due before a given date.
+| Due Date | A resident's fet or collection is due one week after their `last fet date` or `last collection date`. | The number of days a resident is considered late is calculated from `a day after` their deadline to the `current date`, both inclusive.
+| Due Date Example | For example, if a resident's last fet date is on a friday, `15-10-2021`, then the resident's fet deadline is on the following friday which is `22-10-2021`. | For example, if a resident's last fet date is `15-10-2021`, then the fet deadline will be `22-10-2021`, if the current date is `25-10-2021`, then the number of days the resident is late for fet is `3 days`.
 
 Here's a step-by-step guide for `Normal Keyword`:<br>
 1. Type the `deadline` command with the `normal keyword`, `f` for fet or `c` for collection, `d1`, the start date and
@@ -215,7 +225,7 @@ Here's a step-by-step guide for `Late Keyword`:<br>
 
 Examples:
 * `deadline k/f d1/10-10-2021 d2/12-10-2021` retrieves a list of residents whose `FET` is due between `10 Oct 2021` and `12 Oct 2021`, inclusive
-* `deadline k/f d1/15-10-2021 d2/20-10-2021` retrieves a list of residents whose `Test Kit Collection` is due some day between `15 Oct 2021` and `20 Oct 2021`, inclusive
+* `deadline k/c d1/15-10-2021 d2/20-10-2021` retrieves a list of residents whose `Test Kit Collection` is due some day between `15 Oct 2021` and `20 Oct 2021`, inclusive
 * `deadline k/lf d1/11-10-2021` retrieves a list of residents whose `FET` is due before `11 Oct 2021`
 * `deadline k/lc d1/12-10-2021` retrieves a list of residents whose `Test Kit Collection` is due before `12 Oct 2021`
 
@@ -444,11 +454,11 @@ Format: `export FILE_NAME`
 1. Run `export FILE_NAME`.
    ![Export](images/logic/commands/exportcommand/command.png)
 
-2. Find your csv file in the `data/exports` folder.
-   ![FileStructure](images/logic/commands/exportcommand/filefolder.png)
+2. Find your csv file in the `data/exports` folder. <br>
+   <img src="images/logic/commands/exportcommand/filefolder.png">
 
-3. Your exported csv file should look like this.
-   ![Csv](images/logic/commands/exportcommand/csvFormat.png)
+3. Your exported csv file should look like this. <br>
+   <img src="images/logic/commands/exportcommand/csvFormat.png" width="300">
 
 Examples:
 * `export` followed by `safeforhall` creates a `safeforhall.csv` within the `data/exports/` folder, with the emails of all the residents currently displayed on the application.
@@ -458,8 +468,6 @@ Examples:
 ### For Events
 
 These commands will function as specified when run under the `Event` tab.
-
-<div style="page-break-after: always;"></div>
 
 #### Adding an event : `add`
 
@@ -702,8 +710,6 @@ Examples:
 
 These commands will function the same in either tab.
 
-<div style="page-break-after: always;"></div>
-
 #### Viewing help : `help`
 
 Provides a short summary of the commands and a hyperlink for the user to reach this online user guide.
@@ -712,15 +718,11 @@ Provides a short summary of the commands and a hyperlink for the user to reach t
 
 Format: `help`
 
-<div style="page-break-after: always;"></div>
-
 #### Switching tabs: `switch`
 
 Toggles between the `Residents` and `Events` tab.
 
 Format: `switch`
-
-<div style="page-break-after: always;"></div>
 
 #### Command history
 
@@ -781,6 +783,7 @@ PREFIX | Description | Usage
 `by/` | Field | `sort`
 `o/` | Order | `sort`
 
+<div style="page-break-after: always;"></div>
 
 ## Command summary
 
