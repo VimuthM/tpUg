@@ -159,10 +159,12 @@ Examples:
 Shows a numbered list of all the residents in the address book.
 
 Format: `view [INDEX]`
-* For an index i, 1 ≤ i ≤ n, where n is the number of residents in the address book
 
-Examples:
+Parameter | Constraints
+|--------|-------
+**INDEX** | For an index i, 1 ≤ i ≤ n, where n is the number of residents in the address book
 
+Functions:
 * `view` shows a list of all the residents
 * `view 30` shows the details of the resident at index 30
 
@@ -178,7 +180,7 @@ Lists residents whose ART collection or FET tests are either:
 
 **:information_source: Note:**<br>
 
-* There is a one week deadline for the test kit collection and fet test, therefore due date refers to one week after the last recorded date
+* There is a one week deadline for the test kit collection and FET test, therefore due date refers to one week after the last recorded date
 
 </div>
 
